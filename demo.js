@@ -1,13 +1,7 @@
-var express = require('express');
-var compression = require('compression');
 var http = require('http');
 var fs = require('fs');
 var path = require('path');
 var url = require('url');
-
-// var app = express();
-
-// app.use(compression());
 
 http.createServer(function (request, response) {
     console.log('request starting...');
