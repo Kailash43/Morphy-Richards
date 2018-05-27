@@ -53,6 +53,6 @@ http.createServer(function (request, response) {
         }
     });
 
-}).listen(3000);
+}).listen(process.env.PORT);
 // process.env.PORT
 console.log('Server running');

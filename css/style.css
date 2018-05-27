@@ -75,42 +75,22 @@ body{font-family: 'openSans-Semibold'; margin: 0;}
 .col-11{flex:0 0 91.666667%;max-width:91.666667%}
 .col-12{flex:0 0 100%;max-width:100%}
 
-
-.section-1{
-    background-image: url(../img/sec-1.png);
-    color: white;
-    height: 750px;
-    text-align: left;
-    background-repeat: no-repeat;
-    margin-bottom: 60px;
-    background-size: 100%;
-}
-
+.section-1,
+.section-8,
 .section-4{
-  display: flex;
-    background-image: url(../img/hand-sec.png);
-    color: white;
-    height: 650px;
-    text-align: left;
-    background-repeat: no-repeat;
-    margin-bottom: 60px;
-    background-size: 100%;
-}
-
-.section-8{
-    background-image: url(../img/icon-range.png);
-    color: white;
-    height: 550px;
-    text-align: left;
-    background-repeat: no-repeat;
-    margin-bottom: 60px;
-    background-size: 100%;
+    display: flex;
+    color: #fff;
+    text-align: center;
+    position: relative;
 }
 
 .topnav {
-  overflow: hidden;
-  background-color: #33333317;
-  text-align: right;
+    overflow: hidden;
+    background-color: #33333317;
+    text-align: right;
+    position: absolute;
+    width: 100%;
+    top: 0;
 }
 
 .topnav a:first-child {
@@ -156,9 +136,10 @@ body{font-family: 'openSans-Semibold'; margin: 0;}
 
 
 .section-2, .section-7, .section-9, .section-5{
-  padding-left: 100px;
-  padding-right: 100px;
-  margin-bottom: 60px;
+  margin: 0 auto;
+  max-width: 96%;
+
+  margin-bottom: 2%;
 }
 
 .section-2 .row:first-child, .section-7 .row:first-child, .section-9 .row:first-child, .section-5 .row:first-child{
@@ -168,17 +149,16 @@ body{font-family: 'openSans-Semibold'; margin: 0;}
 }
 
 .left-img, .right-img{
-    height: 12.5cm;
+    height: 100%;
+    width: 100%;
 }
 
 .left-img{
-    width: 50%;
     border-top-left-radius: 12px;
     border-bottom-left-radius: 12px;
 }
 
 .right-img{
-  width: 58.3%;
     border-top-right-radius: 12px;
     border-bottom-right-radius: 12px;
 }
@@ -274,24 +254,97 @@ body{font-family: 'openSans-Semibold'; margin: 0;}
   font-size: 24px;
 }
 
-@media screen and (max-width: 600px) {
+/*Kamlesh Code Start*/
+.overlapImg img{
+  width: 100%;
+  display: inline-block;
+
+}
+.handSecContent{
+  position: absolute;
+    width: 100%;
+    top: 0;
+}
+.handSecContent .col-6{
+  margin-top:10%;
+}
+.handSecContent .col-6:first-child{
+  padding-left: 3%;
+  float: left;
+}
+.handSecContent .col-6:last-child{
+  padding-right: 3%;
+  float: right;
+}
+
+.section-4, .section-7, .section-9, .section-5,.section-8{
+  margin-bottom: 2%;
+}
+/*Kamlesh Code End*/
+
+
+
+@media screen and (max-width: 768px) {
+  .container{width: 100%;}
+  .col-6{flex:0 0 100%;max-width:100%}
+  .section-text{
+    position: absolute;
+    color: #fff;
+    margin-top: 23%;
+  }
   .topnav a:not(:first-child) {display: none;}
-  .topnav a.icon {
+  .topnav a.icon {  
     float: right;
     display: block;
   }
+  .section-4-text {
+    font-size: 30px;
+     margin-top: 50%;
+  }
+  .section-4-sign{
+    font-size: 15px;
+  }
+  .snacking_text{
+    font-size: 35px;
+  }
+  .breakfast_text {
+      font-size: 26px;
+  } 
+  .paragraph{font-size: 12px;}
+  .topnav{background-color: #000;z-index: 99;}
+  .left-img,.right-img{border-radius: 12px;}
+  .handSecContent .col-6{margin-top: 0}
+  .footer-service li{padding:3%;}
 }
 
 @media screen and (max-width: 600px) {
-  .topnav.responsive {position: relative;}
-  .topnav.responsive .icon {
+  .container{width: 100%;}
+  .col-6{flex:0 0 100%;max-width:100%}
+  .section-text{
     position: absolute;
-    right: 0;
-    top: 0;
+    color: #fff;
+    margin-top: 23%;
   }
-  .topnav.responsive a {
-    float: none;
+  .topnav a:not(:first-child) {display: none;}
+  .topnav a.icon {  
+    float: right;
     display: block;
-    text-align: left;
   }
+  .section-4-text {
+    font-size: 15px;
+  }
+  .section-4-sign{
+    font-size: 12px;
+  }
+  .snacking_text{
+    font-size: 35px;
+  }
+  .breakfast_text {
+      font-size: 26px;
+  } 
+  .internal-text{padding:5%;}
+  .paragraph{font-size: 12px;}
+  .topnav{background-color: #000;z-index: 99;}
+  .left-img,.right-img{border-radius: 12px;}
+  .handSecContent .col-6{margin-top: 0}
 }
