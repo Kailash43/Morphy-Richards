@@ -1,7 +1,13 @@
+var express = require('express');
+var compression = require('compression');
 var http = require('http');
 var fs = require('fs');
 var path = require('path');
 var url = require('url');
+
+// var app = express();
+
+// app.use(compression());
 
 http.createServer(function (request, response) {
     console.log('request starting...');
@@ -37,7 +43,12 @@ http.createServer(function (request, response) {
         if (error) {
             if(error.code == 'ENOENT'){
                 fs.readFile('./404.html', function(error, content) {
-                    response.writeHead(200, { 'Content-Type': contentType });
+                    response.writeHead(200, {
+                          'Content-Type': contentType,
+                          'Content-Length': content,
+                          'Accept-Ranges': 'bytes',
+                          'Cache-Control': 'no-cache'
+                    });
                     response.end(content, 'utf-8');
                 });
             }
@@ -48,7 +59,12 @@ http.createServer(function (request, response) {
             }
         }
         else {
-            response.writeHead(200, { 'Content-Type': contentType });
+
+            response.writeHead(200, {
+                          'Content-Type': contentType,
+                          'Accept-Ranges': 'bytes',
+                          'Cache-Control': 'no-cache'
+                    });
             response.end(content, 'utf-8');
         }
     });
